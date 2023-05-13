@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context=".ContactEditActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_toolbar01">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/iconIv"
+            android:layout_width="189dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo" />
+
+
+        <TextView
+            android:id="@+id/titleTil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" Edit Contact Info"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+
+
+    </RelativeLayout>
+
+    <!--scroll view -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="225dp">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+    <!-- input first name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/FnameTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        >
+
+        <EditText
+            android:id="@+id/FnameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edittext01"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawablePadding="10dp"
+            android:hint="First Name"
+            android:inputType="textPersonName|textCapWords"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray01"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- input last name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LnameTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/FnameTil"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/LnameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edittext01"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawablePadding="10dp"
+            android:hint="Last Name"
+            android:inputType="textPersonName|textCapWords"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray01"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- input  Telephone-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/LnameTil"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edittext01"
+            android:drawableStart="@drawable/baseline_local_phone_24"
+            android:drawablePadding="10dp"
+            android:hint="Phone Number "
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray01"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--pick category from dialog -->
+    <TextView
+        android:id="@+id/categoryTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phoneTil"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_edittext01"
+        android:drawableStart="@drawable/baseline_category_24"
+        android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:hint="Contact category"
+        android:padding="10dp"
+        android:textColorHint="@color/gray01"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+
+    <!--add Contact Button -->
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_button01"
+        android:text="Update"
+        android:layout_below="@id/categoryTv"
+        android:textColor="@color/white"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

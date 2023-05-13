@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context=".ContactDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_toolbar01">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <ImageView
+            android:id="@+id/iconIv"
+            android:layout_width="189dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo" />
+
+
+        <TextView
+            android:id="@+id/titleTil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Contacts Details"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+
+        <!-- favoris -->
+        <Button
+            android:id="@+id/favorisBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="addToFavorites"
+            android:padding="5dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/baseline_favorite_border_24" />
+    </RelativeLayout>
+
+    <!--scroll view -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRL"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="-2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbarRL">
+
+
+            <!-- input first name-->
+
+            <TextView
+                android:id="@+id/FnameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext01"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:drawablePadding="10dp"
+                android:hint="First Name"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray01"
+                android:textSize="16sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <!-- input last name-->
+
+
+            <TextView
+                android:id="@+id/LnameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext01"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:drawablePadding="10dp"
+                android:layout_below="@+id/FnameEt"
+                android:hint="Last Name"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray01"
+                android:textSize="16sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <!-- input  Telephone-->
+
+
+            <TextView
+                android:id="@+id/phoneEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext01"
+                android:drawableStart="@drawable/baseline_local_phone_24"
+                android:drawablePadding="10dp"
+                android:layout_below="@+id/LnameEt"
+                android:hint="Phone Number "
+                android:inputType="phone"
+                android:layout_marginTop="10dp"
+
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray01"
+                android:textSize="16sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"/>
+
+
+            <!--pick category from dialog -->
+            <TextView
+                android:id="@+id/categoryTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneEt"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/shape_edittext01"
+                android:drawableStart="@drawable/baseline_category_24"
+                android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:hint="Contact category"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray01"
+                android:textSize="16sp"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        >
+
+        <!--add call Button -->
+        <Button
+            android:id="@+id/callBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/baseline_local_phone_24"
+            android:text="Call"
+            android:textColor="@color/white"
+            android:layout_marginEnd="5dp"
+            />
+
+
+        <!--add sms Button -->
+        <Button
+            android:id="@+id/smsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/baseline_sms_24"
+            android:text="Text"
+            android:textColor="@color/white"
+            android:layout_marginEnd="5dp"
+
+            />
+
+        <!--add email Button -->
+        <Button
+            android:id="@+id/emailBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/baseline_email_24"
+            android:text="E-mail"
+            android:textColor="@color/white"
+            android:layout_marginEnd="5dp"
+
+            />
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+        </RelativeLayout>
+

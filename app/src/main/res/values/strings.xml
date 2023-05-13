@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Welcome to your PhoneBook</string>
+    <!-- make it bold -->
+    <string name="new_user_sign_up">New User ? <b>Sign up</b></string>
+</resources>
